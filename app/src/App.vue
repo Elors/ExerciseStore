@@ -1,40 +1,43 @@
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Lato:300);
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  html,
-  body { height: 100%; }
-
-  body {
-    align-items: center;
-    background:
-      radial-gradient(
-        ellipse at center,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(229, 229, 229, .85) 100%
-      );
-    background-position: center;
-    display: flex;
-    font-family: Lato, Helvetica, sans-serif;
-    justify-content: center;
-    text-align: center;
-  }
-</style>
-
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <el-row type="flex" justify="center">
+      <el-col>
+        <app-header class="header" />
+        <app-body class="body" />
+      </el-col>
+    </el-row>
 </template>
 
-<script>
-  import store from 'src/vuex/store'
+<script type="text/babel">
+  import Header from './components/Header.vue'
+  import Body from './components/Body.vue'
 
   export default {
-    store
+    name: 'app',
+    components: {
+      'app-header': Header,
+      'app-body': Body
+    }
   }
 </script>
+
+<style lang="stylus">
+body
+  padding: 0px
+  margin: 0px
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 14px
+  line-height: 1.42857143
+  color: #333
+  background-color: #fff
+</style>
+
+<style lang="stylus" scoped>
+  .header
+    min-height: 50px
+    background: #F8F8F8
+    border: 1px solid #e7e7e7
+
+  .body
+    min-height: 900px
+
+</style>
