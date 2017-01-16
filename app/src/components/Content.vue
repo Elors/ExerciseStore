@@ -33,9 +33,9 @@ export default {
       jsonLeft: jsonStr1,
       jsonRight: jsonStr2,
       alert: {
-        info: '提示文案',
+        info: '提示信息',
         type: 'info',
-        desc: '提示说明'
+        desc: '提示详细说明文字'
       }
     }
   },
